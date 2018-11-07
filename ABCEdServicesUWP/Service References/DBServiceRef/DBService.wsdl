@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="DBService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://abcendserviceiishost.azurewebsites.net/Service.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://abcendserviceiishost.azurewebsites.net/Service.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://abcendserviceiishost.azurewebsites.net/Service.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/ABCEndServiceLib.DB" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IDBService_InsertAStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAStudent" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertAStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertAStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertACourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertACourse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertACourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertACourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertEnrolment_InputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEnrolment" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InsertEnrolment_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InsertEnrolmentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllStudents_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStudents" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllStudents_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllStudentsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllCourses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCourses" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetAllCourses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetEnrollmentsForStudent_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentsForStudent" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_GetEnrollmentsForStudent_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetEnrollmentsForStudentResponse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_getStudentsEnrolledInCourse_InputMessage">
+    <wsdl:part name="parameters" element="tns:getStudentsEnrolledInCourse" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_getStudentsEnrolledInCourse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getStudentsEnrolledInCourseResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IDBService">
+    <wsdl:operation name="InsertAStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/InsertAStudent" message="tns:IDBService_InsertAStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/InsertAStudentResponse" message="tns:IDBService_InsertAStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertACourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/InsertACourse" message="tns:IDBService_InsertACourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/InsertACourseResponse" message="tns:IDBService_InsertACourse_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertEnrolment">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/InsertEnrolment" message="tns:IDBService_InsertEnrolment_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/InsertEnrolmentResponse" message="tns:IDBService_InsertEnrolment_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStudents">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllStudents" message="tns:IDBService_GetAllStudents_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllStudentsResponse" message="tns:IDBService_GetAllStudents_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetAllCourses" message="tns:IDBService_GetAllCourses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetAllCoursesResponse" message="tns:IDBService_GetAllCourses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentsForStudent">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/GetEnrollmentsForStudent" message="tns:IDBService_GetEnrollmentsForStudent_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/GetEnrollmentsForStudentResponse" message="tns:IDBService_GetEnrollmentsForStudent_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getStudentsEnrolledInCourse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/getStudentsEnrolledInCourse" message="tns:IDBService_getStudentsEnrolledInCourse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/getStudentsEnrolledInCourseResponse" message="tns:IDBService_getStudentsEnrolledInCourse_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="MybasicHttpBinding" type="tns:IDBService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAStudent">
+      <soap:operation soapAction="http://tempuri.org/IDBService/InsertAStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertACourse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/InsertACourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertEnrolment">
+      <soap:operation soapAction="http://tempuri.org/IDBService/InsertEnrolment" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllStudents">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllStudents" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllCourses">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetAllCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetEnrollmentsForStudent">
+      <soap:operation soapAction="http://tempuri.org/IDBService/GetEnrollmentsForStudent" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentsEnrolledInCourse">
+      <soap:operation soapAction="http://tempuri.org/IDBService/getStudentsEnrolledInCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DBService">
+    <wsdl:port name="MybasicHttpBinding" binding="tns:MybasicHttpBinding">
+      <soap:address location="http://abcendserviceiishost.azurewebsites.net/Service.svc/MybasicHttpBinding" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

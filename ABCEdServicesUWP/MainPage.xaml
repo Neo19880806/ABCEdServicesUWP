@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="ABCEdServicesUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ABCEdServicesUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <SplitView x:Name="MySplitView" Margin="0" IsPaneOpen="True" DisplayMode="CompactOverlay" CompactPaneLength="30" OpenPaneLength="150">
+            <SplitView.Pane>
+                <StackPanel>
+                    <Button x:Name="controlsButton" Content="&#xE700;" FontFamily="Segoe MDL2 Assets" HorizontalAlignment="Left" Margin="0,15,0,0" Background="{x:Null}" Click="controlsButton_Click"/>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnStudentAdmin" Content="&#xE77B;" FontFamily="Segoe MDL2 Assets" Background="{x:Null}" Click="btnStudentAdmin_Click"></Button>
+                        <TextBlock Name="tbStudentAdmin" Text="Student Admin"></TextBlock>
+                    </StackPanel>
+                    <StackPanel Orientation="Horizontal">
+                        <Button Name="btnCourseAdmin" Content="&#xE890;" FontFamily="Segoe MDL2 Assets" Background="{x:Null}" Click="btnCourseAdmin_Click"></Button>
+                        <TextBlock Name="tbCourseAdmin" Text="Course Admin"></TextBlock>
+                    </StackPanel>
+
+                </StackPanel>
+            </SplitView.Pane>
+            <Grid>
+                <Grid x:Name="gridStudent" HorizontalAlignment="Center" Height="400" Margin="0" VerticalAlignment="Center" Width="600">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnNewStudents" Content="New Students" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Click="btnNewStudents_Click"/>
+                    <Button x:Name="btnViewStudents" Content="View Students" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Column="1" Click="btnViewStudents_Click"/>
+                    <Button x:Name="btnTimeTable" Content="Student Timetable" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Row="1" Click="btnTimeTable_Click"/>
+                </Grid>
+                <Grid x:Name="gridCourse" HorizontalAlignment="Center" Height="400" Margin="0" VerticalAlignment="Center" Width="600" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="btnNewCourses" Content="New Courses" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Click="btnNewCourses_Click"/>
+                    <Button x:Name="btnViewCourses" Content="View Courses" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Column="1" Click="btnViewCourses_Click"/>
+                    <Button x:Name="btnEnrollStudent" Content="Enroll Student" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Row="1" Click="btnEnrollStudent_Click"/>
+                    <Button x:Name="btnViewEnrollments" Content="View Enrollments" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Row="1" Grid.Column="1" Click="btnViewEnrollments_Click"/>
+                    <Button x:Name="btnDisplayBill" Content="Display Bill" HorizontalAlignment="Center" Height="60" Margin="0" VerticalAlignment="Center" Width="150" Grid.Row="2" Click="btnDisplayBill_Click"/>
+                </Grid>
+            </Grid>
+        </SplitView>
+    </Grid>
+</Page>
